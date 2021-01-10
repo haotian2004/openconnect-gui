@@ -14,3 +14,5 @@ build-release*/
 _xxx/
 *.zip
 *.exe
+
+.idea

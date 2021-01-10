@@ -483,7 +483,7 @@ void MainWindow::changeStatus(int val)
 
         ui->iconLabel->setPixmap(CONNECTING_ICON);
         ui->connectionButton->setIcon(QIcon(":/images/process-stop.png"));
-        ui->connectionButton->setText(tr("Cancel"));
+        ui->connectionButton->setText(tr("取消"));
         blink_timer->start(1500);
 
         disconnect(ui->connectionButton, &QPushButton::clicked,

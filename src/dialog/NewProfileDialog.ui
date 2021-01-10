@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>New profile</string>
+   <string>新建配置</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -22,7 +22,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="labelName">
        <property name="text">
-        <string>Name</string>
+        <string>名称</string>
        </property>
        <property name="buddy">
         <cstring>lineEditName</cstring>
@@ -37,17 +37,17 @@
           <bool>false</bool>
          </property>
          <property name="toolTip">
-          <string>This is a friendly name to distinguish the connection</string>
+          <string>用来标记这条连接的别名</string>
          </property>
          <property name="placeholderText">
-          <string>User friendly unique connection name</string>
+          <string>用来标记这条连接的别名</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBoxCustomize">
          <property name="text">
-          <string>&amp;Customize</string>
+          <string>&amp;自定义</string>
          </property>
         </widget>
        </item>
@@ -56,7 +56,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="labelGateway">
        <property name="text">
-        <string>Gateway</string>
+        <string>服务器地址</string>
        </property>
        <property name="buddy">
         <cstring>lineEditGateway</cstring>
@@ -79,7 +79,7 @@
      <item row="2" column="0">
       <widget class="QLabel" name="protocolLabel">
        <property name="text">
-        <string>VPN protocol</string>
+        <string>VPN协议</string>
        </property>
        <property name="buddy">
         <cstring>protocolComboBox</cstring>
@@ -119,7 +119,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Note: you can anytime later edit profile details...</string>
+      <string>注：快速配置之后仍可以随时修改详细配置</string>
      </property>
     </widget>
    </item>

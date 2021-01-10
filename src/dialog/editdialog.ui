@@ -1,603 +1,626 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EditDialog</class>
- <widget class="QDialog" name="EditDialog">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>405</width>
-    <height>563</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Edit</string>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <layout class="QFormLayout" name="settingsProfileLayout">
-     <property name="fieldGrowthPolicy">
-      <enum>QFormLayout::ExpandingFieldsGrow</enum>
-     </property>
-     <item row="0" column="0">
-      <widget class="QLabel" name="nameLabel">
-       <property name="text">
-        <string>Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="nameEdit">
-       <property name="toolTip">
-        <string>This is a friendly name to distinguish the connection</string>
-       </property>
-       <property name="placeholderText">
-        <string>User friendly unique connection name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="gatewayLabel">
-       <property name="text">
-        <string>Gateway</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="gatewayEdit">
-       <property name="toolTip">
-        <string>Specify the hostname to connect to; a port may be specified after the host separated with a colon ':'</string>
-       </property>
-       <property name="statusTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>https://my_server[:443]/[usergroup]</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="usernameLabel">
-       <property name="text">
-        <string>Username</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="usernameEdit">
-       <property name="toolTip">
-        <string>Specify the username used in that gateway</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="groupnameLabel">
-       <property name="text">
-        <string>Groupname</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <layout class="QHBoxLayout" name="groupnameLayout">
-       <item>
-        <widget class="QLineEdit" name="groupnameEdit">
-         <property name="styleSheet">
-          <string notr="true">background-color:&quot;transparent&quot;</string>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="groupnameClear">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="../openconnect-gui.qrc">
-           <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="caCertificateLabel">
-       <property name="text">
-        <string>CA Certificate</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <layout class="QHBoxLayout" name="caCertificatLayout">
-       <item>
-        <widget class="QToolButton" name="caCertButton">
-         <property name="text">
-          <string>...</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="caCertEdit">
-         <property name="toolTip">
-          <string>Specify the CA certificate, if any; by default the system CAs will be used</string>
-         </property>
-         <property name="whatsThis">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If not set, the system's trusted certificate storage will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="caCertClear">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Clear</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../openconnect-gui.qrc">
-           <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="serverCertificateLabel">
-       <property name="text">
-        <string>Server Certificate</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <layout class="QHBoxLayout" name="serverCertificateLayout">
-       <item>
-        <widget class="QLineEdit" name="serverCertHash">
-         <property name="styleSheet">
-          <string notr="true">background-color:&quot;transparent&quot;</string>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="serverCertClear">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Clear</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../openconnect-gui.qrc">
-           <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="otpTokenLabel">
-       <property name="text">
-        <string>OTP Token</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <layout class="QHBoxLayout" name="otpTokenLayout">
-       <item>
-        <widget class="QComboBox" name="tokenBox">
-         <property name="minimumSize">
-          <size>
-           <width>140</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <property name="maxVisibleItems">
-          <number>3</number>
-         </property>
-         <item>
-          <property name="text">
-           <string notr="true">HOTP (RFC4226)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">TOTP (RFC6238)</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>STOKEN (RSA)</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="tokenEdit">
-         <property name="toolTip">
-          <string>This is the token code; should be a hex value (starting with 0x), or a value starting with 'base32:'</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="tokenClear">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>...</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../openconnect-gui.qrc">
-           <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item row="9" column="0">
-      <widget class="QLabel" name="protocolLabel">
-       <property name="text">
-        <string>VPN protocol</string>
-       </property>
-       <property name="buddy">
-        <cstring>protocolComboBox</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1">
-      <widget class="QComboBox" name="protocolComboBox">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="caCertHash">
-       <property name="styleSheet">
-        <string notr="true">background-color:&quot;transparent&quot;</string>
-       </property>
-       <property name="frame">
-        <bool>false</bool>
-       </property>
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QTabWidget" name="settingsTabWidget">
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="localCertificateTab">
-      <attribute name="title">
-       <string>Local Certificate</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <layout class="QFormLayout" name="formLayout_2">
-         <property name="fieldGrowthPolicy">
-          <enum>QFormLayout::ExpandingFieldsGrow</enum>
-         </property>
-         <item row="1" column="0">
-          <widget class="QLabel" name="userCertificateLabel">
-           <property name="text">
-            <string>User Certificate</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <layout class="QHBoxLayout" name="userCertificateLayout">
-           <item>
-            <widget class="QToolButton" name="userCertButton">
-             <property name="text">
-              <string>...</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="userCertEdit">
-             <property name="toolTip">
-              <string>Specify your certificate file, if any</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="userCertClear">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>Clear</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../openconnect-gui.qrc">
-               <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="userCertHash">
-           <property name="styleSheet">
-            <string notr="true">background-color:&quot;transparent&quot;</string>
-           </property>
-           <property name="frame">
-            <bool>false</bool>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="userKeyLabel">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="text">
-            <string>User Key</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <layout class="QHBoxLayout" name="userKeyLayout">
-           <item>
-            <widget class="QToolButton" name="userKeyButton">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="userKeyEdit">
-             <property name="enabled">
-              <bool>true</bool>
-             </property>
-             <property name="toolTip">
-              <string>Specify your key file if any; in case of a PKCS #12 file, you only need to set the certificate</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QToolButton" name="userKeyClear">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="text">
-              <string>Clear</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../openconnect-gui.qrc">
-               <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="systemStoreTab">
-      <attribute name="title">
-       <string>System Store</string>
-      </attribute>
-      <widget class="QListWidget" name="loadWinCertList">
-       <property name="geometry">
-        <rect>
-         <x>9</x>
-         <y>9</y>
-         <width>316</width>
-         <height>72</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>331</x>
-         <y>35</y>
-         <width>45</width>
-         <height>48</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QToolButton" name="loadWinCert">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <property name="toolTip">
-           <string extracomment="Select that certificate"/>
-          </property>
-          <property name="text">
-           <string>Select</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QToolButton" name="resetWinCertSelection">
-          <property name="text">
-           <string>Reset</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-    </widget>
-   </item>
-   <item>
-    <widget class="QGroupBox" name="settingsGroupBox">
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <layout class="QFormLayout" name="formLayout_3">
-        <property name="fieldGrowthPolicy">
-         <enum>QFormLayout::ExpandingFieldsGrow</enum>
+    <class>EditDialog</class>
+    <widget class="QDialog" name="EditDialog">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>405</width>
+                <height>563</height>
+            </rect>
         </property>
-        <item row="0" column="0">
-         <widget class="QLabel" name="reconnectTimeoutLabel">
-          <property name="text">
-           <string>Reconnect timeout</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QSpinBox" name="reconnectTimeoutSpinBox">
-          <property name="toolTip">
-           <string>Keep reconnect attempts until so much seconds are elapsed.
-The default timeout is 300 seconds, which means that openconnect can recover VPN connection after a temporary network down time of 300 seconds.</string>
-          </property>
-          <property name="suffix">
-           <string>s</string>
-          </property>
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>1000</number>
-          </property>
-          <property name="value">
-           <number>300</number>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="dtlsAttemptPeriodLabel">
-          <property name="text">
-           <string>DTLS attempt period</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QSpinBox" name="dtlsAttemptPeriodSpinBox">
-          <property name="suffix">
-           <string>s</string>
-          </property>
-          <property name="maximum">
-           <number>1000</number>
-          </property>
-          <property name="value">
-           <number>30</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <widget class="QCheckBox" name="minimizeBox">
-          <property name="toolTip">
-           <string>Enable this to automatically minimize after connection</string>
-          </property>
-          <property name="text">
-           <string>Minimize on Connect</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QCheckBox" name="batchModeBox">
-          <property name="toolTip">
-           <string>Enable this to remember passwords for this server</string>
-          </property>
-          <property name="text">
-           <string>Batch mode</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QCheckBox" name="disableUdpBox">
-          <property name="text">
-           <string>Disable UDP</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QCheckBox" name="useProxyBox">
-          <property name="toolTip">
-           <string>Enable this to use the system's default proxy settings for this server</string>
-          </property>
-          <property name="text">
-           <string>Use Proxy</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+        <property name="windowTitle">
+            <string>编辑</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+                <layout class="QFormLayout" name="settingsProfileLayout">
+                    <property name="fieldGrowthPolicy">
+                        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+                    </property>
+                    <item row="0" column="0">
+                        <widget class="QLabel" name="nameLabel">
+                            <property name="text">
+                                <string>名称</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="0" column="1">
+                        <widget class="QLineEdit" name="nameEdit">
+                            <property name="toolTip">
+                                <string>用来标记这条连接的别名</string>
+                            </property>
+                            <property name="placeholderText">
+                                <string>用来标记这条连接的别名</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="1" column="0">
+                        <widget class="QLabel" name="gatewayLabel">
+                            <property name="text">
+                                <string>服务器地址</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="1" column="1">
+                        <widget class="QLineEdit" name="gatewayEdit">
+                            <property name="toolTip">
+                                <string>Specify the hostname to connect to; a port may be specified after the host
+                                    separated with a colon ':'
+                                </string>
+                            </property>
+                            <property name="statusTip">
+                                <string/>
+                            </property>
+                            <property name="whatsThis">
+                                <string/>
+                            </property>
+                            <property name="placeholderText">
+                                <string>https://my_server[:443]/[usergroup]</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="2" column="0">
+                        <widget class="QLabel" name="usernameLabel">
+                            <property name="text">
+                                <string>用户名</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="2" column="1">
+                        <widget class="QLineEdit" name="usernameEdit">
+                            <property name="toolTip">
+                                <string>连接时使用的用户名</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="3" column="0">
+                        <widget class="QLabel" name="groupnameLabel">
+                            <property name="text">
+                                <string>群组名</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="3" column="1">
+                        <layout class="QHBoxLayout" name="groupnameLayout">
+                            <item>
+                                <widget class="QLineEdit" name="groupnameEdit">
+                                    <property name="styleSheet">
+                                        <string notr="true">background-color:&quot;transparent&quot;</string>
+                                    </property>
+                                    <property name="frame">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="readOnly">
+                                        <bool>true</bool>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QToolButton" name="groupnameClear">
+                                    <property name="enabled">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="text">
+                                        <string/>
+                                    </property>
+                                    <property name="icon">
+                                        <iconset resource="../openconnect-gui.qrc">
+                                            <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png
+                                        </iconset>
+                                    </property>
+                                </widget>
+                            </item>
+                        </layout>
+                    </item>
+                    <item row="4" column="0">
+                        <widget class="QLabel" name="caCertificateLabel">
+                            <property name="text">
+                                <string>CA证书</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="4" column="1">
+                        <layout class="QHBoxLayout" name="caCertificatLayout">
+                            <item>
+                                <widget class="QToolButton" name="caCertButton">
+                                    <property name="text">
+                                        <string>...</string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QLineEdit" name="caCertEdit">
+                                    <property name="toolTip">
+                                        <string>Specify the CA certificate, if any; by default the system CAs will be
+                                            used
+                                        </string>
+                                    </property>
+                                    <property name="whatsThis">
+                                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If not set, the system's
+                                            trusted certificate storage will be used.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+                                        </string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QToolButton" name="caCertClear">
+                                    <property name="enabled">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="text">
+                                        <string>清除</string>
+                                    </property>
+                                    <property name="icon">
+                                        <iconset resource="../openconnect-gui.qrc">
+                                            <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png
+                                        </iconset>
+                                    </property>
+                                </widget>
+                            </item>
+                        </layout>
+                    </item>
+                    <item row="6" column="0">
+                        <widget class="QLabel" name="serverCertificateLabel">
+                            <property name="text">
+                                <string>服务器证书</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="6" column="1">
+                        <layout class="QHBoxLayout" name="serverCertificateLayout">
+                            <item>
+                                <widget class="QLineEdit" name="serverCertHash">
+                                    <property name="styleSheet">
+                                        <string notr="true">background-color:&quot;transparent&quot;</string>
+                                    </property>
+                                    <property name="frame">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="readOnly">
+                                        <bool>true</bool>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QToolButton" name="serverCertClear">
+                                    <property name="enabled">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="text">
+                                        <string>清楚</string>
+                                    </property>
+                                    <property name="icon">
+                                        <iconset resource="../openconnect-gui.qrc">
+                                            <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png
+                                        </iconset>
+                                    </property>
+                                </widget>
+                            </item>
+                        </layout>
+                    </item>
+                    <item row="8" column="0">
+                        <widget class="QLabel" name="otpTokenLabel">
+                            <property name="text">
+                                <string>OTP</string>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="8" column="1">
+                        <layout class="QHBoxLayout" name="otpTokenLayout">
+                            <item>
+                                <widget class="QComboBox" name="tokenBox">
+                                    <property name="minimumSize">
+                                        <size>
+                                            <width>140</width>
+                                            <height>0</height>
+                                        </size>
+                                    </property>
+                                    <property name="currentIndex">
+                                        <number>0</number>
+                                    </property>
+                                    <property name="maxVisibleItems">
+                                        <number>3</number>
+                                    </property>
+                                    <item>
+                                        <property name="text">
+                                            <string notr="true">HOTP (RFC4226)</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string notr="true">TOTP (RFC6238)</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>STOKEN (RSA)</string>
+                                        </property>
+                                    </item>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QLineEdit" name="tokenEdit">
+                                    <property name="toolTip">
+                                        <string>This is the token code; should be a hex value (starting with 0x), or a
+                                            value starting with 'base32:'
+                                        </string>
+                                    </property>
+                                </widget>
+                            </item>
+                            <item>
+                                <widget class="QToolButton" name="tokenClear">
+                                    <property name="enabled">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="text">
+                                        <string>...</string>
+                                    </property>
+                                    <property name="icon">
+                                        <iconset resource="../openconnect-gui.qrc">
+                                            <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png
+                                        </iconset>
+                                    </property>
+                                </widget>
+                            </item>
+                        </layout>
+                    </item>
+                    <item row="9" column="0">
+                        <widget class="QLabel" name="protocolLabel">
+                            <property name="text">
+                                <string>VPN协议</string>
+                            </property>
+                            <property name="buddy">
+                                <cstring>protocolComboBox</cstring>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="9" column="1">
+                        <widget class="QComboBox" name="protocolComboBox">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                        </widget>
+                    </item>
+                    <item row="5" column="1">
+                        <widget class="QLineEdit" name="caCertHash">
+                            <property name="styleSheet">
+                                <string notr="true">background-color:&quot;transparent&quot;</string>
+                            </property>
+                            <property name="frame">
+                                <bool>false</bool>
+                            </property>
+                            <property name="readOnly">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
+            </item>
+            <item>
+                <widget class="QTabWidget" name="settingsTabWidget">
+                    <property name="currentIndex">
+                        <number>0</number>
+                    </property>
+                    <widget class="QWidget" name="localCertificateTab">
+                        <attribute name="title">
+                            <string>本地证书</string>
+                        </attribute>
+                        <layout class="QVBoxLayout" name="verticalLayout_2">
+                            <item>
+                                <layout class="QFormLayout" name="formLayout_2">
+                                    <property name="fieldGrowthPolicy">
+                                        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+                                    </property>
+                                    <item row="1" column="0">
+                                        <widget class="QLabel" name="userCertificateLabel">
+                                            <property name="text">
+                                                <string>用户证书</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="1" column="1">
+                                        <layout class="QHBoxLayout" name="userCertificateLayout">
+                                            <item>
+                                                <widget class="QToolButton" name="userCertButton">
+                                                    <property name="text">
+                                                        <string>...</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="userCertEdit">
+                                                    <property name="toolTip">
+                                                        <string>Specify your certificate file, if any</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QToolButton" name="userCertClear">
+                                                    <property name="enabled">
+                                                        <bool>false</bool>
+                                                    </property>
+                                                    <property name="text">
+                                                        <string>清除</string>
+                                                    </property>
+                                                    <property name="icon">
+                                                        <iconset resource="../openconnect-gui.qrc">
+                                                            <normaloff>:/images/trashcan.png</normaloff>
+                                                            :/images/trashcan.png
+                                                        </iconset>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                        </layout>
+                                    </item>
+                                    <item row="2" column="1">
+                                        <widget class="QLineEdit" name="userCertHash">
+                                            <property name="styleSheet">
+                                                <string notr="true">background-color:&quot;transparent&quot;</string>
+                                            </property>
+                                            <property name="frame">
+                                                <bool>false</bool>
+                                            </property>
+                                            <property name="readOnly">
+                                                <bool>true</bool>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="3" column="0">
+                                        <widget class="QLabel" name="userKeyLabel">
+                                            <property name="enabled">
+                                                <bool>true</bool>
+                                            </property>
+                                            <property name="text">
+                                                <string>用户Key</string>
+                                            </property>
+                                        </widget>
+                                    </item>
+                                    <item row="3" column="1">
+                                        <layout class="QHBoxLayout" name="userKeyLayout">
+                                            <item>
+                                                <widget class="QToolButton" name="userKeyButton">
+                                                    <property name="enabled">
+                                                        <bool>true</bool>
+                                                    </property>
+                                                    <property name="text">
+                                                        <string>...</string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QLineEdit" name="userKeyEdit">
+                                                    <property name="enabled">
+                                                        <bool>true</bool>
+                                                    </property>
+                                                    <property name="toolTip">
+                                                        <string>Specify your key file if any; in case of a PKCS #12
+                                                            file, you only need to set the certificate
+                                                        </string>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                            <item>
+                                                <widget class="QToolButton" name="userKeyClear">
+                                                    <property name="enabled">
+                                                        <bool>false</bool>
+                                                    </property>
+                                                    <property name="text">
+                                                        <string>清除</string>
+                                                    </property>
+                                                    <property name="icon">
+                                                        <iconset resource="../openconnect-gui.qrc">
+                                                            <normaloff>:/images/trashcan.png</normaloff>
+                                                            :/images/trashcan.png
+                                                        </iconset>
+                                                    </property>
+                                                </widget>
+                                            </item>
+                                        </layout>
+                                    </item>
+                                </layout>
+                            </item>
+                        </layout>
+                    </widget>
+                    <widget class="QWidget" name="systemStoreTab">
+                        <attribute name="title">
+                            <string>System Store</string>
+                        </attribute>
+                        <widget class="QListWidget" name="loadWinCertList">
+                            <property name="geometry">
+                                <rect>
+                                    <x>9</x>
+                                    <y>9</y>
+                                    <width>316</width>
+                                    <height>72</height>
+                                </rect>
+                            </property>
+                        </widget>
+                        <widget class="QWidget" name="layoutWidget">
+                            <property name="geometry">
+                                <rect>
+                                    <x>331</x>
+                                    <y>35</y>
+                                    <width>45</width>
+                                    <height>48</height>
+                                </rect>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout">
+                                <item>
+                                    <widget class="QToolButton" name="loadWinCert">
+                                        <property name="enabled">
+                                            <bool>false</bool>
+                                        </property>
+                                        <property name="toolTip">
+                                            <string extracomment="Select that certificate"/>
+                                        </property>
+                                        <property name="text">
+                                            <string>选择</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QToolButton" name="resetWinCertSelection">
+                                        <property name="text">
+                                            <string>重置</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                    </widget>
+                </widget>
+            </item>
+            <item>
+                <widget class="QGroupBox" name="settingsGroupBox">
+                    <layout class="QVBoxLayout" name="verticalLayout_3">
+                        <item>
+                            <layout class="QFormLayout" name="formLayout_3">
+                                <property name="fieldGrowthPolicy">
+                                    <enum>QFormLayout::ExpandingFieldsGrow</enum>
+                                </property>
+                                <item row="0" column="0">
+                                    <widget class="QLabel" name="reconnectTimeoutLabel">
+                                        <property name="text">
+                                            <string>超时重连间隔</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item row="0" column="1">
+                                    <widget class="QSpinBox" name="reconnectTimeoutSpinBox">
+                                        <property name="toolTip">
+                                            <string>Keep reconnect attempts until so much seconds are elapsed.
+                                                The default timeout is 300 seconds, which means that openconnect can
+                                                recover VPN connection after a temporary network down time of 300
+                                                seconds.
+                                            </string>
+                                        </property>
+                                        <property name="suffix">
+                                            <string>s</string>
+                                        </property>
+                                        <property name="minimum">
+                                            <number>1</number>
+                                        </property>
+                                        <property name="maximum">
+                                            <number>1000</number>
+                                        </property>
+                                        <property name="value">
+                                            <number>300</number>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item row="1" column="0">
+                                    <widget class="QLabel" name="dtlsAttemptPeriodLabel">
+                                        <property name="text">
+                                            <string>DTLS重试间隔</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item row="1" column="1">
+                                    <widget class="QSpinBox" name="dtlsAttemptPeriodSpinBox">
+                                        <property name="suffix">
+                                            <string>s</string>
+                                        </property>
+                                        <property name="maximum">
+                                            <number>1000</number>
+                                        </property>
+                                        <property name="value">
+                                            <number>30</number>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </item>
+                        <item>
+                            <layout class="QGridLayout" name="gridLayout">
+                                <item row="0" column="0">
+                                    <widget class="QCheckBox" name="minimizeBox">
+                                        <property name="toolTip">
+                                            <string>启用时连接成功后将自动最小化窗口</string>
+                                        </property>
+                                        <property name="text">
+                                            <string>连接成功后最小化</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item row="0" column="1">
+                                    <widget class="QCheckBox" name="batchModeBox">
+                                        <property name="toolTip">
+                                            <string>开启用于记住密码</string>
+                                        </property>
+                                        <property name="text">
+                                            <string>记住密码</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item row="1" column="0">
+                                    <widget class="QCheckBox" name="disableUdpBox">
+                                        <property name="text">
+                                            <string>禁用UDP</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                                <item row="1" column="1">
+                                    <widget class="QCheckBox" name="useProxyBox">
+                                        <property name="toolTip">
+                                            <string>Enable this to use the system's default proxy settings for this
+                                                server
+                                            </string>
+                                        </property>
+                                        <property name="text">
+                                            <string>使用代理</string>
+                                        </property>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+            <item>
+                <widget class="QDialogButtonBox" name="buttonBox">
+                    <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="standardButtons">
+                        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+                    </property>
+                </widget>
+            </item>
+        </layout>
     </widget>
-   </item>
-   <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
-     </property>
-    </widget>
-   </item>
-  </layout>
- </widget>
- <tabstops>
-  <tabstop>nameEdit</tabstop>
-  <tabstop>gatewayEdit</tabstop>
-  <tabstop>usernameEdit</tabstop>
-  <tabstop>groupnameClear</tabstop>
-  <tabstop>caCertButton</tabstop>
-  <tabstop>caCertEdit</tabstop>
-  <tabstop>caCertClear</tabstop>
-  <tabstop>serverCertClear</tabstop>
-  <tabstop>tokenBox</tabstop>
-  <tabstop>tokenEdit</tabstop>
-  <tabstop>tokenClear</tabstop>
-  <tabstop>settingsTabWidget</tabstop>
-  <tabstop>userCertButton</tabstop>
-  <tabstop>userCertEdit</tabstop>
-  <tabstop>userCertClear</tabstop>
-  <tabstop>userKeyButton</tabstop>
-  <tabstop>userKeyEdit</tabstop>
-  <tabstop>userKeyClear</tabstop>
-  <tabstop>minimizeBox</tabstop>
-  <tabstop>batchModeBox</tabstop>
-  <tabstop>disableUdpBox</tabstop>
-  <tabstop>useProxyBox</tabstop>
-  <tabstop>loadWinCertList</tabstop>
-  <tabstop>loadWinCert</tabstop>
- </tabstops>
- <resources>
-  <include location="../openconnect-gui.qrc"/>
- </resources>
- <connections/>
+    <tabstops>
+        <tabstop>nameEdit</tabstop>
+        <tabstop>gatewayEdit</tabstop>
+        <tabstop>usernameEdit</tabstop>
+        <tabstop>groupnameClear</tabstop>
+        <tabstop>caCertButton</tabstop>
+        <tabstop>caCertEdit</tabstop>
+        <tabstop>caCertClear</tabstop>
+        <tabstop>serverCertClear</tabstop>
+        <tabstop>tokenBox</tabstop>
+        <tabstop>tokenEdit</tabstop>
+        <tabstop>tokenClear</tabstop>
+        <tabstop>settingsTabWidget</tabstop>
+        <tabstop>userCertButton</tabstop>
+        <tabstop>userCertEdit</tabstop>
+        <tabstop>userCertClear</tabstop>
+        <tabstop>userKeyButton</tabstop>
+        <tabstop>userKeyEdit</tabstop>
+        <tabstop>userKeyClear</tabstop>
+        <tabstop>minimizeBox</tabstop>
+        <tabstop>batchModeBox</tabstop>
+        <tabstop>disableUdpBox</tabstop>
+        <tabstop>useProxyBox</tabstop>
+        <tabstop>loadWinCertList</tabstop>
+        <tabstop>loadWinCert</tabstop>
+    </tabstops>
+    <resources>
+        <include location="../openconnect-gui.qrc"/>
+    </resources>
+    <connections/>
 </ui>

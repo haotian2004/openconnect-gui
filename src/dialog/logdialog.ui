@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>View Log</string>
+   <string>查看日志</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="leftMargin">
@@ -48,7 +48,7 @@
          <enum>Qt::LeftToRight</enum>
         </property>
         <property name="text">
-         <string>&amp;Close</string>
+         <string>&amp;关闭</string>
         </property>
        </widget>
       </item>
@@ -65,21 +65,21 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>&amp;Copy</string>
+         <string>&amp;复制</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonSelectAll">
         <property name="text">
-         <string>Select &amp;All</string>
+         <string>全选</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="pushButtonClear">
         <property name="text">
-         <string>C&amp;lear</string>
+         <string>清除</string>
         </property>
        </widget>
       </item>
@@ -99,7 +99,7 @@
       <item>
        <widget class="QCheckBox" name="checkBox_autoScroll">
         <property name="text">
-         <string>Auto-scroll</string>
+         <string>自动滚屏</string>
         </property>
         <property name="checked">
          <bool>true</bool>

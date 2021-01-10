@@ -1,4 +1,4 @@
-# OpenConnect GUI
+# OpenConnect GUI 中文版
 
 [![Last Release:](https://img.shields.io/github/release/openconnect/openconnect-gui.svg)](https://github.com/openconnect/openconnect-gui/releases)
 [![Downloades](https://img.shields.io/github/downloads/openconnect/openconnect-gui/latest/total.svg)](https://github.com/openconnect/openconnect-gui/releases)

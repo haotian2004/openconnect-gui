@@ -74,7 +74,7 @@
         <string/>
        </property>
        <attribute name="title">
-        <string>Main</string>
+        <string>主界面</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="0" column="0">
@@ -106,7 +106,7 @@
               <item>
                <widget class="QLabel" name="serverLabel">
                 <property name="text">
-                 <string>Server:</string>
+                 <string>服务器:</string>
                 </property>
                </widget>
               </item>
@@ -116,10 +116,10 @@
               <item>
                <widget class="QToolButton" name="serverListControl">
                 <property name="whatsThis">
-                 <string>Edit</string>
+                 <string>编辑</string>
                 </property>
                 <property name="text">
-                 <string>Edit</string>
+                 <string>编辑</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../openconnect-gui.qrc">
@@ -137,7 +137,7 @@
               <item>
                <widget class="QPushButton" name="connectionButton">
                 <property name="text">
-                 <string>Connect</string>
+                 <string>发起连接</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../openconnect-gui.qrc">
@@ -148,7 +148,7 @@
               <item>
                <widget class="QPushButton" name="viewLogButton">
                 <property name="text">
-                 <string>View log</string>
+                 <string>查看日志</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../openconnect-gui.qrc">
@@ -166,7 +166,7 @@
       </widget>
       <widget class="QWidget" name="tabWidget_vpnInfo">
        <attribute name="title">
-        <string>VPN Info</string>
+        <string>VPN信息</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
@@ -259,14 +259,14 @@
           <item row="5" column="0">
            <widget class="QLabel" name="downloadLabelText">
             <property name="text">
-             <string>Download:</string>
+             <string>下载:</string>
             </property>
            </widget>
           </item>
           <item row="6" column="0">
            <widget class="QLabel" name="uploadLaberText">
             <property name="text">
-             <string>Upload:</string>
+             <string>上传:</string>
             </property>
            </widget>
           </item>
@@ -310,11 +310,11 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>&amp;File</string>
+     <string>&amp;文件</string>
     </property>
     <widget class="QMenu" name="menuProfiles">
      <property name="title">
-      <string>&amp;Profiles</string>
+      <string>&amp;配置</string>
      </property>
      <addaction name="actionNewProfile"/>
      <addaction name="actionNewProfileAdvanced"/>
@@ -327,7 +327,7 @@
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>&amp;Help</string>
+     <string>&amp;帮助</string>
     </property>
     <addaction name="actionWebSite"/>
     <addaction name="separator"/>
@@ -336,13 +336,13 @@
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
-     <string>&amp;View</string>
+     <string>&amp;查看</string>
     </property>
     <addaction name="actionLogWindow"/>
    </widget>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
-     <string>&amp;Settings</string>
+     <string>&amp;设置</string>
     </property>
     <addaction name="actionMinimizeToTheNotificationArea"/>
     <addaction name="actionMinimizeTheApplicationInsteadOfClosing"/>
@@ -358,7 +358,7 @@
   </widget>
   <action name="actionQuit">
    <property name="text">
-    <string>&amp;Quit</string>
+    <string>&amp;退出</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -366,7 +366,7 @@
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>&amp;About</string>
+    <string>&amp;关于</string>
    </property>
    <property name="statusTip">
     <string>Show the application's About info</string>
@@ -374,26 +374,26 @@
   </action>
   <action name="actionAboutQt">
    <property name="text">
-    <string>About &amp;Qt</string>
+    <string>关于 &amp;Qt</string>
    </property>
    <property name="statusTip">
-    <string>Show the Qt library's About info</string>
+    <string>QT库相关信息</string>
    </property>
   </action>
   <action name="actionMinimize">
    <property name="text">
-    <string>Mi&amp;nimize</string>
+    <string>最小化</string>
    </property>
    <property name="toolTip">
-    <string>Mimimize</string>
+    <string>最小化</string>
    </property>
   </action>
   <action name="actionRestore">
    <property name="text">
-    <string>&amp;Restore</string>
+    <string>&amp;恢复</string>
    </property>
    <property name="toolTip">
-    <string>Restore</string>
+    <string>恢复</string>
    </property>
   </action>
   <action name="actionNewProfile">
@@ -402,10 +402,10 @@
      <normaloff>:/images/text-new.png</normaloff>:/images/text-new.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;New profile</string>
+    <string>&amp;新建配置</string>
    </property>
    <property name="toolTip">
-    <string>New quick connect profile</string>
+    <string>新建快速连接配置</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
@@ -417,7 +417,7 @@
      <normaloff>:/images/text-editor.png</normaloff>:/images/text-editor.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Edit selected profile</string>
+    <string>&amp;编辑配置</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+E</string>
@@ -429,7 +429,7 @@
      <normaloff>:/images/trashcan.png</normaloff>:/images/trashcan.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Remove selected profile</string>
+    <string>&amp;删除配置</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+R</string>
@@ -441,10 +441,10 @@
      <normaloff>:/images/edit-find.png</normaloff>:/images/edit-find.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Log window</string>
+    <string>&amp;日志窗口</string>
    </property>
    <property name="toolTip">
-    <string>View log window</string>
+    <string>查看日志</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+L</string>
@@ -455,7 +455,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Minimize to the notification &amp;area</string>
+    <string>最小化到通知栏</string>
    </property>
   </action>
   <action name="actionMinimizeTheApplicationInsteadOfClosing">
@@ -463,7 +463,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Minimize instead of &amp;closing</string>
+    <string>点击关闭时最小化</string>
    </property>
   </action>
   <action name="actionStartMinimized">
@@ -471,15 +471,15 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Start &amp;minimized</string>
+    <string>最小化启动</string>
    </property>
   </action>
   <action name="actionWebSite">
    <property name="text">
-    <string>&amp;Web site...</string>
+    <string>&amp;官网...</string>
    </property>
    <property name="statusTip">
-    <string>Open the browser and go to product site</string>
+    <string>打开官网</string>
    </property>
   </action>
   <action name="actionSingleInstanceMode">
@@ -490,7 +490,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>&amp;Single instance mode</string>
+    <string>&amp;单实例模式</string>
    </property>
   </action>
   <action name="actionNewProfileAdvanced">
@@ -499,10 +499,10 @@
      <normaloff>:/images/text-new.png</normaloff>:/images/text-new.png</iconset>
    </property>
    <property name="text">
-    <string>New profile (&amp;advanced)</string>
+    <string>新建配置 (&amp;高级)</string>
    </property>
    <property name="toolTip">
-    <string>New profile (advanced setup)</string>
+    <string>新建配置 (高级设置)</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+N</string>
